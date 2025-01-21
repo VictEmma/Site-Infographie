@@ -1,157 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>La Face Cachée des Dauphins</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to bottom, #003366, #000000);
-            height: 10000px; /* Page très longue */
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        h1 {
-            position: fixed;
-            top: 20px;
-            width: 100%;
-            text-align: center;
-            font-size: 3rem;
-            color: white;
-            text-transform: uppercase;
-            z-index: 10;
-            pointer-events: auto;
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        h1.hidden {
-            opacity: 0;
-            transform: translateY(-50px);
-        }
-
-        .stage-title {
-            position: absolute;
-            width: 100%;
-            text-align: center;
-            font-size: 2rem;
-            color: white;
-            text-transform: uppercase;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        .stage-title.visible {
-            opacity: 1;
-        }
-
-        .submarine {
-            position: fixed;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%) rotate(90deg);
-            width: 100px;
-            z-index: 5;
-        }
-
-        .bubbles {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .bubble {
-            position: absolute;
-            bottom: -50px;
-            width: 20px;
-            height: 20px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            animation: rise 5s linear infinite;
-        }
-
-        @keyframes rise {
-            0% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-150vh);
-                opacity: 0;
-            }
-        }
-
-        .bubble:nth-child(1) { left: 20%; animation-duration: 6s; }
-        .bubble:nth-child(2) { left: 40%; animation-duration: 4s; animation-delay: 1s; }
-        .bubble:nth-child(3) { left: 60%; animation-duration: 5s; animation-delay: 2s; }
-        .bubble:nth-child(4) { left: 80%; animation-duration: 7s; animation-delay: 3s; }
-
-        .spotlight {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 40%, rgba(0, 0, 0, 0.8) 70%);
-            mix-blend-mode: screen;
-            z-index: 4;
-            opacity: 0.7;
-        }
-
-        .image-wrapper {
-            position: relative;
-            display: block;
-            padding: 50px;
-            z-index: 2;
-        }
-
-        .hidden-image {
-            position: absolute;
-            width: 300px;
-            opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-
-        .hidden-image.revealed {
-            opacity: 1;
-        }
-
-        .hidden-image.expanded {
-            transform: scale(2.5);
-            z-index: 20;
-        }
-        footer {
-            background: #003366;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
-
-        footer a {
-            color: #80deea;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 <body>
     <h1 id="title">La Face Cachée des Dauphins</h1>
-    <img class="submarine" src="sous-marin.png" alt="Sous-marin">
+    <img class="submarine" src="img/sous-marin.png" alt="Sous-marin">
     <div class="bubbles">
         <div class="bubble"></div>
         <div class="bubble"></div>
@@ -161,107 +19,120 @@
     <div class="spotlight" id="spotlight"></div>
 
     <div class="image-wrapper">
-        <div class="stage-title" id="stage1" style="top: 80px;">Le dauphin n'est pas si souriant</div>
-        <img class="hidden-image" src="Sourire.png" alt="Le dauphin n'est pas si souriant" style="top: 100px; left: 10%;">
+        <div class="stage-title" id="stage0" style="top: 500px;">Passez votre phare partout vos réponses ne sont pas loins</div>
+        <div class="stage-title" id="stage1" style="top: 1500px;">Le dauphin n'est pas si souriant</div>
+        <img class="hidden-image" src="img/Sourire.png" alt="Image en forme de dauphin" style="top: 2000px; left: 30%;">
 
-        <div class="stage-title" id="stage2" style="top: 380px;">Nouvelle étape : Recherche Junkie</div>
-        <img class="hidden-image" src="Junkie.png" alt="Le dauphin s'amuse d'une façon très spéciale et au détriment des autres qui plus est" style="top: 400px; left: 30%;">
+        <div class="stage-title" id="stage2" style="top: 4000px;">Le dauphin s'amuse d'une façon très spéciale et au détriment des autres qui plus est</div>
+        <img class="hidden-image" src="img/Junkie.png" alt="Des dauphins qui jonglent" style="top: 4500px; left: 60%;">
 
-        <div class="stage-title" id="stage3" style="top: 680px;">Nouvelle étape : Recherche Harceleurs</div>
-        <img class="hidden-image" src="Harceleurs.png" alt="Le dauphin est un sauvage" style="top: 700px; left: 50%;">
+        <div class="stage-title" id="stage3" style="top: 5000px;">Le dauphin est un sauvage</div>
+        <img class="hidden-image" src="img/Harceleurs.png" alt="Le dauphin est un sauvage" style="top: 5500px; left: 50%;">
 
-        <div class="stage-title" id="stage4" style="top: 980px;">Nouvelle étape : Recherche Violeurs</div>
-        <img class="hidden-image" src="Violeurs.png" alt="Le dauphin est ignoble" style="top: 1000px; left: 70%;">
+        <div class="stage-title" id="stage4" style="top: 6000px;">Le dauphin est ignoble</div>
+        <img class="hidden-image" src="img/Violeurs.png" alt="Groupe de dauphins" style="top: 6500px; left: 70%;">
 
-        <div class="stage-title" id="stage5" style="top: 1280px;">Nouvelle étape : Recherche Infanticide</div>
-        <img class="hidden-image" src="Infanticide.png" alt="Il ne pense pas avec son cerveau pour faire ça" style="top: 1300px; left: 90%;">
+        <div class="stage-title" id="stage5" style="top: 7000px;">Il ne pense pas avec son cerveau pour faire ça</div>
+        <img class="hidden-image" src="img/Infanticide.png" alt="Dauphin assassin" style="top: 7500px; left: 45%;">
 
-        <div class="stage-title" id="stage6" style="top: 1580px;">Nouvelle étape : Recherche Psycho</div>
-        <img class="hidden-image" src="Psycho.png" alt="Il n'a donc aucune limite ?" style="top: 1600px; left: 20%;">
+        <div class="stage-title" id="stage6" style="top: 8000px;">Il n'a donc aucune limite ?</div>
+        <img class="hidden-image" src="img/Psycho.png" alt="Dauphin psychopathe" style="top: 8500px; left: 55%;">
 
-        <div class="stage-title" id="stage7" style="top: 6000px;">Nouvelle étape : Recherche Plongeurs</div>
-        <img class="hidden-image" src="Plongeurs.png" alt="Il aime de tout, c'est dégoûtant" style="top: 6500px; left: 40%;">
+        <div class="stage-title" id="stage7" style="top: 9000px;">Il aime de tout, c'est dégoûtant</div>
+        <img class="hidden-image" src="img/Plongeurs.png" alt="Dauphin et une plongeuse" style="top: 9300px; left: 40%;">
     </div>
-
-    <script>
-        const spotlight = document.getElementById("spotlight");
-        const images = document.querySelectorAll(".hidden-image");
-        const title = document.getElementById("title");
-        const stageTitles = document.querySelectorAll(".stage-title");
-
-        // Gestion du scroll pour cacher le titre principal
-        window.addEventListener("scroll", () => {
-            const scrollPosition = window.scrollY;
-            if (scrollPosition > 100) {
-                title.classList.add("hidden");
-            } else {
-                title.classList.remove("hidden");
-            }
-
-            // Apparition et disparition des titres d'étapes
-            stageTitles.forEach((stage) => {
-                const stageTop = parseInt(stage.style.top, 10);
-                const stageHeight = 100;
-
-                if (scrollPosition >= stageTop - stageHeight && scrollPosition <= stageTop + stageHeight) {
-                    stage.classList.add("visible");
-                } else {
-                    stage.classList.remove("visible");
-                }
-            });
-        });
-
-        // Déplacement du spotlight
-        document.addEventListener("mousemove", (e) => {
-            const x = e.clientX;
-            const y = e.clientY;
-
-            spotlight.style.background = `radial-gradient(circle at ${x}px ${y}px, 
-                rgba(255, 255, 255, 0.3) 0%, 
-                rgba(255, 255, 255, 0.1) 40%, 
-                rgba(0, 0, 0, 0.8) 70%)`;
-                        // Détection des images sous le spotlight
-                        images.forEach((img) => {
-                const rect = img.getBoundingClientRect();
-                if (
-                    x > rect.left && x < rect.right &&
-                    y > rect.top && y < rect.bottom
-                ) {
-                    img.classList.add("revealed"); // Rendre visible
-                }
-            });
-        });
-
-        // Rendre les images "persistantes" après révélation
-        images.forEach((img) => {
-            img.addEventListener("mouseenter", () => {
-                img.classList.add("revealed");
-            });
-        });
-
-        // Gestion du clic sur les images
-        images.forEach((img) => {
-            img.addEventListener("click", () => {
-                if (img.classList.contains("expanded")) {
-                    img.classList.remove("expanded"); // Réduire l'image
-                } else {
-                    images.forEach((i) => i.classList.remove("expanded"));
-                    img.classList.add("expanded"); // Agrandir l'image
-                }
-            });
-        });
-    </script>
 </body>
 <footer>
-    <p>Sources :</p>
-    <a href="#" target="_blank">Source 1</a>
-    <a href="#" target="_blank">Source 2</a>
-    <a href="#" target="_blank">Source 3</a>
-    <a href="#" target="_blank">Source 4</a>
-    <a href="#" target="_blank">Source 5</a>
-    <a href="#" target="_blank">Source 6</a>
-    <a href="#" target="_blank">Source 7</a>
-    <a href="#" target="_blank">Source 8</a>
+    <div>
+        <button id="toggle-images-btn">Afficher toutes les images</button>
+        <a href="#" target="_blank">Les sources</a>
+    </div>
+    <p class="copyright">&copy; 2025 Ndayishimiye Victor Emmanuel. Tous droits réservés.</p>
 </footer>
+<script>
+    const toggleBtn = document.getElementById("toggle-images-btn");
+    const spotlight = document.getElementById("spotlight");
+    const images = document.querySelectorAll(".hidden-image");
+    const title = document.getElementById("title");
+    const stageTitles = document.querySelectorAll(".stage-title");
+    
+    let imagesVisible = false;
+
+    // Gestion du scroll pour cacher le titre principal
+    window.addEventListener("scroll", () => {
+        const scrollPosition = window.scrollY;
+        if (scrollPosition > 100) {
+            title.classList.add("hidden");
+        } else {
+            title.classList.remove("hidden");
+        }
+
+        // Apparition et disparition des titres d'étapes
+        stageTitles.forEach((stage) => {
+            const stageTop = parseInt(stage.style.top, 10);
+            const stageHeight = 100;
+
+            if (scrollPosition >= stageTop - stageHeight && scrollPosition <= stageTop + stageHeight) {
+                stage.classList.add("visible");
+            } else {
+                stage.classList.remove("visible");
+            }
+        });
+    });
+
+    // Déplacement du spotlight
+    document.addEventListener("mousemove", (e) => {
+        const x = e.clientX;
+        const y = e.clientY;
+
+        spotlight.style.background = `radial-gradient(circle at ${x}px ${y}px, 
+            rgba(255, 255, 255, 0.3) 0%, 
+            rgba(255, 255, 255, 0.1) 40%, 
+            rgba(0, 0, 0, 0.8) 70%)`;
+
+        // Détection des images sous le spotlight
+        images.forEach((img) => {
+            const rect = img.getBoundingClientRect();
+            if (
+                x > rect.left && x < rect.right &&
+                y > rect.top && y < rect.bottom
+            ) {
+                img.classList.add("revealed"); // Rendre visible
+            }
+        });
+    });
+
+    // Bouton pour révéler toutes les images
+    toggleBtn.addEventListener("click", () => {
+        imagesVisible = !imagesVisible;
+
+        if (imagesVisible) {
+            images.forEach(img => img.classList.add("revealed"));
+            toggleBtn.textContent = "Masquer toutes les images";
+        } else {
+            images.forEach(img => img.classList.remove("revealed"));
+            toggleBtn.textContent = "Afficher toutes les images";
+        }
+    });
+
+    // Rendre les images "persistantes" après révélation
+    images.forEach((img) => {
+        img.addEventListener("mouseenter", () => {
+            img.classList.add("revealed");
+        });
+    });
+
+    // Gestion du clic sur les images
+    images.forEach((img) => {
+        img.addEventListener("click", () => {
+            if (img.classList.contains("expanded")) {
+                img.classList.remove("expanded"); // Réduire l'image
+            } else {
+                images.forEach((i) => i.classList.remove("expanded"));
+                img.classList.add("expanded"); // Agrandir l'image
+            }
+        });
+    });
+</script>
 
 </html>
